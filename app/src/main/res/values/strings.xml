@@ -1,0 +1,11 @@
+<resources>
+
+
+    <string name="open_web_browser">Web Browser</string>
+    <string name="dial_number">Dial Number</string>
+    <string name="sms">SMS</string>
+    <string name="email">Email</string>
+    <string name="open_sites_apps">Open Sites And App\n</string>
+    <string name="open_website">Open Website</string>
+    <string name="app_name">app name</string>
+</resources>
