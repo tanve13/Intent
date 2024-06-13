@@ -28,14 +28,14 @@ class MainActivity : AppCompatActivity() {
         btnDial?.setOnClickListener {
             try {
                 var intent = Intent(Intent.ACTION_DIAL)
-                intent.setData(Uri.parse("tel:8790678924"))
+                intent.setData(Uri.parse("tel:XXXXXXXXXX"))
                 startActivity(intent)
             } catch (exception: Exception) {
                 Toast.makeText(this, "Sorry cannot dial a number", Toast.LENGTH_SHORT).show()
             }
             btnSms?.setOnClickListener {
                 var intent = Intent(Intent.ACTION_VIEW)
-                intent.setData(Uri.parse( "sms:8790678924"))
+                intent.setData(Uri.parse( "sms:XXXXXXXXXX"))
                 startActivity(intent)
             }
             btnEmail?.setOnClickListener {
