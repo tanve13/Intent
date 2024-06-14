@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import com.google.android.material.snackbar.Snackbar
+import com.tanveer.task3.R.id.btnSnackBar
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +15,7 @@ class MainActivity : AppCompatActivity() {
     var btnDial: Button? = null
     var btnSms: Button? = null
     var btnEmail: Button? = null
+    var btnSnackBar : Button? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         btnDial = findViewById(R.id.btnDial)
         btnSms = findViewById(R.id.btnSms)
         btnEmail = findViewById(R.id.btnEmail)
+        btnSnackBar = findViewById(R.id.btnSnackBar)
         btnWebsite?.setOnClickListener {
             var intent = Intent(Intent.ACTION_VIEW)
             intent.setData(Uri.parse("https://kotlinlang.org/"))
@@ -45,6 +49,14 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
             } catch(exception : Exception){
                     Toast.makeText(this, "sorry cannot open email", Toast.LENGTH_SHORT).show()}
+            }
+            btnSnackBar?.setOnClickListener {
+                Snackbar.make(it,"This is the snackbar",Snackbar.LENGTH_SHORT)
+                    .setAnchorView(btnSms)
+                    .setAction("Undo",{_->
+                        Toast.makeText(this, "this is toast", Toast.LENGTH_SHORT).show()
+                    })
+                    .show()
             }
         }
     }
